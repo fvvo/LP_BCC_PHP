@@ -30,20 +30,20 @@ class autor{
         $linha = $query->fetch(\PDO::FETCH_ASSOC);
         Conexao::desconectar();
 
-        $inv = new \MODEL\autor();
-        $inv->setId($linha['id']);
-        $inv->setNome($linha['nome']);
-        $inv->setQtde($linha['qtdeLivPubli']);
-        $inv->setEditora($linha['editora']);
-        return $inv;
+        $aut = new \MODEL\autor();
+        $aut->setId($linha['id']);
+        $aut->setNome($linha['nome']);
+        $aut->setQtde($linha['qtdeLivPubli']);
+        $aut->setEditora($linha['editora']);
+        return $aut;
     }
 
-    public function Insert(\MODEL\Autor $inv){
+    public function Insert(\MODEL\Autor $aut){
         $sql = "INSERT INTO autor (nome,editora) VALUES (?,?) ;";
 
         $con = Conexao::conectar();
         $query = $con->prepare($sql);
-        $result = $query->execute(array($inv->getNome(),$inv->getEditora()));
+        $result = $query->execute(array($aut->getNome(),$aut->getEditora()));
         $con = Conexao::desconectar();
       
         return $result; 
