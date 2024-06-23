@@ -27,7 +27,7 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper orange darken-3">
+        <div class="nav-wrapper blue darken-3">
             <a href="#" class="brand-logo right">
                 <img src="../VIEW/images/bernardo1.jpeg" alt=""
                 width="130" height="65"> Usuario:  <?php echo $_SESSION['login']; ?>
@@ -43,11 +43,7 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="/view/js/materialize.js"></script>
     <script src="/view/js/init.js"></script>
-    <div>
-        <h1>Livraria São Bernardo</h1>
-        <img src="../VIEW/images/bernardo1.jpeg" alt="" width="900" height="500">
-               
-    </div>
+
  
 </body>
 
