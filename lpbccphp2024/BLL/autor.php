@@ -18,6 +18,10 @@ class autor{
         $dalAutor = new \DAL\Autor();   
         return $dalAutor->Insert($autor);
     }
+    public function Update(\MODEL\Autor $autor) {
+        $dalAutor = new \DAL\Autor();   
+        return $dalAutor->Update($autor);
+    }
 }
 
 ?>

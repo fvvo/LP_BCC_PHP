@@ -48,5 +48,15 @@ class autor{
       
         return $result; 
     }
+    public function Update(\MODEL\autor $autor){
+        $sql = "UPDATE autor SET nome = ?, qtdeLivPubli = ?, editora = ? WHERE id = ?;";
+        
+        $con = Conexao::conectar();
+        $query = $con->prepare($sql);
+        $result = $query->execute(array($autor->getNome(), $autor->getQtde(), $autor->getEditora(), $autor->getID()));
+        $con = Conexao::desconectar();
+      
+        return $result; 
+    }
 
 }

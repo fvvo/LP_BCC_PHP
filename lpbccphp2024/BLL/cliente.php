@@ -18,6 +18,10 @@ class cliente{
         $dalCliente = new \DAL\cliente();   
         return $dalCliente->Insert($cliente);
     }
+    public function Update(\MODEL\cliente $cliente) {
+        $dalCliente = new \DAL\cliente();   
+        return $dalCliente->Update($cliente);
+    }
 }
 
 ?>

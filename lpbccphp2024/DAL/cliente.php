@@ -33,8 +33,8 @@ class cliente{
         $cli = new \MODEL\cliente();
         $cli->setId($linha['id']);
         $cli->setNome($linha['nome']);
-        $cli->setQtde($linha['qtdeLivPubli']);
-        $cli->setData($linha['dataNascimeto']);
+        $cli->setQtde($linha['qtdeLiv']);
+        $cli->setData($linha['dataNascimento']);
         return $cli;
     }
 
@@ -44,6 +44,17 @@ class cliente{
         $con = Conexao::conectar();
         $query = $con->prepare($sql);
         $result = $query->execute(array($cli->getNome(),$cli->getData()));
+        $con = Conexao::desconectar();
+      
+        return $result; 
+    }
+    
+    public function Update(\MODEL\cliente $cli){
+        $sql = "UPDATE cliente SET nome = ?, dataNascimento = ?, qtdeLiv = ? WHERE id = ?;";
+        
+        $con = Conexao::conectar();
+        $query = $con->prepare($sql);
+        $result = $query->execute(array($cli->getNome(), $cli->getData(), $cli->getQtde(), $cli->getID()));
         $con = Conexao::desconectar();
       
         return $result; 
